@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="conatainer">
+<div class="conatainer mt-5">
+ <form action="" method="post">
+   {% csrf_token %}
+   <h5>Are you sure want to delete?? </h5>
+  <button class="btn btn-danger mt-5">yes</button>
+ </form>
+  
+</div>
+</div>
+
+{% endblock %}

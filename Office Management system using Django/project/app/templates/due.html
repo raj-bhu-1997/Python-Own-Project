@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<!--- B check due list ---->
+
+
+  <div class="container first-container">
+    <div class="second-container">
+      <h5 class="heading">B check due customers<span class="badge badge-pill badge-danger mx-2">{{ total_b }}</span></h5>
+      
+      <div class="list-group">
+        {% for b_customer in B_due %}
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ b_customer.customer_name}}</h5>
+            <small><span class="badge badge-warning">Warning</span></small>
+          </div>
+        <div class="w-100 justify-content-between"><p class="mb-1">B check due on {{ b_customer.last_b }}</p>
+        <div class="mt-2">
+          <h6>Note:</h6>
+          <p> {{b_customer.remark_b }}
+          <a href="{% url 'note' b_customer.pk %}">write something</a></p>
+        </div>
+        <div class="d-flex">
+        <a href="{% url 'list_detail' b_customer.pk %}" type="button" class="btn btn-outline-success mt-3">more details</a>
+        <h6 class="mt-4 ml-4">No of reminder <span class="badge badge-success"></span>{{ b_customer.reminder_count_b }}</h6>
+        </div>
+        
+       </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+<!---- Coolant due customer -------->
+
+
+<div class="container first-container">
+    <div class="second-container">
+      <h5 class="heading">Coolant due customers<span class="badge badge-pill badge-danger mx-2">{{ total_coolant }}</span></h5>
+      
+      <div class="list-group">
+        {% for coolant_customer in coolant_due %}
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ coolant_customer.customer_name}}</h5>
+            <small><span class="badge badge-warning">Warning</span></small>
+          </div>
+        <div class="w-100 justify-content-between"><p class="mb-1">Coolant due on {{ coolant_customer.last_coolant }}</p>
+        <a href="{% url 'coolant_list_detail' coolant_customer.pk %}" type="button" class="btn btn-outline-success mt-3">more details</a>
+       </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<!------- Battery due customer ------>
+
+
+<div class="container first-container">
+    <div class="second-container">
+      <h5 class="heading">Battery due customers<span class="badge badge-pill badge-danger mx-2">{{ total_battery }}</span></h5>
+      
+      <div class="list-group">
+        {% for battery_customer in battery_due %}
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ battery_customer.customer_name}}</h5>
+            <small><span class="badge badge-warning">Warning</span></small>
+          </div>
+        <div class="w-100 justify-content-between"><p class="mb-1">Battery replaced on {{ battery_customer.last_coolant }}</p>
+        <a href="{% url 'battery_list_detail' battery_customer.pk %}" type="button" class="btn btn-outline-success mt-3">more details</a>
+       </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<!-------- Air filter due customer ----------->
+
+
+<div class="container first-container">
+    <div class="second-container">
+      <h5 class="heading">Airfilter due customers<span class="badge badge-pill badge-danger mx-2">{{ total_airfilter }}</span></h5>
+      
+      <div class="list-group">
+        {% for airfilter_customer in airfilter_due %}
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ airfilter_customer.customer_name}}</h5>
+            <small><span class="badge badge-warning">Warning</span></small>
+          </div>
+        <div class="w-100 justify-content-between"><p class="mb-1">Airfilter replaced on {{ airfilter_customer.last_airfilter }}</p>
+        <a href="{% url 'airfilter_list_detail' airfilter_customer.pk %}" type="button" class="btn btn-outline-success mt-3">more details</a>
+       </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+<!---------- amc due customer ------------>
+
+<div class="container first-container">
+    <div class="second-container">
+      <h5 class="heading">AMC due customers<span class="badge badge-pill badge-danger mx-2">{{ total_amcdue }}</span></h5>
+      
+      <div class="list-group">
+        {% for amcdue_customer in amc_due %}
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ amc_due_customer.customer_name}}</h5>
+            <small><span class="badge badge-warning">Warning</span></small>
+          </div>
+        <div class="w-100 justify-content-between"><p class="mb-1">AMC end on  {{ amcdue_customer.amc_end }}</p>
+        <a href="{% url 'amc_list_detail' amcdue_customer.pk %}" type="button" class="btn btn-outline-success mt-3">more details</a>
+       </div>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+

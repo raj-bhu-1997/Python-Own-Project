@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="conatiner">
+  <div class="container profile-image">
+    <img src="{% static 'images/image.png' %}" alt="" />
+  </div>
+  <div class="container mt-3">
+    <h3>Profile details</h3>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <td>{{ user_profile.user_name }}</td>
+        </tr>
+        <tr>
+          <th>Emp code</th>
+          <td>{{ user_profile.emp_code }}</td>
+        </tr>
+        <tr>
+          <th>User mail Id</th>
+          <td>{{ user_profile.user_mail }}</td>
+        </tr>
+        <tr>
+          <th>Password</th>
+          <td>{{ user_profile.user_mail_password }}</td>
+        </tr>
+        <tr>
+          <th>Manager mail id </th>
+          <td>{{ user_profile.manager_mail }}</td>
+        </tr>
+        <tr>
+          <th>Advicer mail id </th>
+          <td>{{ user_profile.advicer_mail }}</td>
+        </tr>
+        <tr>
+          <th>AMC department mail id </th>
+          <td>{{ user_profile.amc_department_mail }}</td>
+        </tr>
+      </table>
+  </div>
+  <div class="container mb-5" style="text-align:center;">
+    <a href="{% url 'profile_update' user_profile.pk %}" class="btn btn-primary">Edit profile</a>
+  </div>
+  
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark">
+  <img src="{% static 'images/image.png' %}" alt="">
+  <a class="navbar-brand" href="#">JN machineries</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mt-3">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+      </li>
+      {% if request.user.is_superuser %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'admin_ownership' %}">Total engine detail</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'admin_total_due_status' %}">Total Due Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'admin_select_owner' %}">Select Owner</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'ownership' %}">My ownership</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'due_status' %}">Due Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customer_response_list' %}">Customer response</a>
+      </li>
+     {% endif %}
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Spare</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="conatiner user_list">
+  <h4>Engineer details</h4>
+  
+  <ul>
+    {% for name in user %}
+    <li><a href="{% url 'admin_due_status' user_name=name.username %}">{{ name.username }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  
+  
+</div>
+{% endblock %}

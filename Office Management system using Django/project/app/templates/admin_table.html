@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block content %}
+<!--<div class="container mt-5"> -->
+  
+  <div class="table-responsive mt-5 ml-1">
+  <div>
+    <form method="get">
+      {{ order.form.as_p }}
+      <button class="btn btn-primary" type="submit">search</button>
+    </form>
+  </div>
+  <table class="table table-striped table-borded">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Sl no</th>
+      <th scope="col">Customer name</th>
+      <th scope="col">ESN</th>
+      <th scope="col">Model</th>
+      <th scope="col">visit</th>
+      <th scope="col">kva</th>
+      <th scope="col">Amc start</th>
+      <th scope="col">Amc End</th>
+      <th scope="col">Last B check date</th>
+      <th scope="col">Last B check hour</th>
+      <th scope="col">Last C check date</th>
+      <th scope="col">Last C check hour</th>
+      <th scope="col">Last D check date</th>
+      <th scope="col">Last D check hour</th>
+      <th scope="col">Last Coolant replacement date </th>
+      <th scope="col">Last coolant replacement hour</th>
+      <th scope="col">Last Air filter replacement date</th>
+      <th scope="col">Last air filter replacement hour</th>
+      <th scope="col">Last battery replacement date</th>
+      <th scope="col">Last battery replacement hour</th>
+      <th scope="col">Battery Type</th>
+      <th scope="col">Controller Type</th>
+      <th scope="col">Type of coolant</th>
+      <th scope="col">Frame type</th>
+      <th scope="col">Genset slno</th>
+      <th scope="col">Last Fuel tank cleaning</th>
+      <th scope="col">Last radiator external cleanling</th>
+      <th scope="col">Last hose replacement</th>
+      <th scope="col">Last plumber block greasing</th>
+      <th scope="col">Last health check up</th>
+      <th scope="col">Five years kit</th>
+      <th scope="col">Recent Hour</th>
+      <th></th>
+      <th></th>
+      
+    </tr>
+  </thead>
+  {% for customer in total %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ customer.customer_name }}</td>
+      <td>{{ customer.esn }}</td>
+      <td>{{ customer.model }}</td>
+      <td>{{ customer.visit }}</td>
+      <td>{{ customer.kva }}</td>
+      <td>{{ customer.amc_start }}</td>
+      <td>{{ customer.amc_end }}</td>
+      <td>{{ customer.last_b }}</td>
+      <td>{{ customer.last_b_hour }}</td>
+      <td>{{ customer.last_c }}</td>
+      <td>{{ customer.last_c_hour }}</td>
+      <td>{{ customer.last_d }}</td>
+      <td>{{ customer.last_d_hour }}</td>
+      <td>{{ customer.last_coolant }}</td>
+      <td>{{ customer.last_coolant_hour }}</td>
+      <td>{{ customer.last_airfilter }}</td>
+      <td>{{ customer.last_airfilter_hour }}</td>
+      <td>{{ customer.last_battery }}</td>
+      <td>{{ customer.last_battery_hour }}</td>
+      <td>{{ customer.battery_type }}</td>
+      <td>{{ customer.controller_type }}</td>
+      <td>{{ customer.type_coolant }}</td>
+      <td>{{ customer.equ_model }}</td>
+      <td>{{ customer.equ_serial }}</td>
+      <td>{{ customer.last_fueltank_clean }}</td>
+      <td>{{ customer.last_radiator_clean }}</td>
+      <td>{{ customer.last_hose_replacement }}</td>
+      <td>{{ customer.last_plumber_block }}</td>
+      <td>{{ customer.last_healthcheck }}</td>
+      <td>{{ customer.last_fiveyear_kit }}</td>
+      <td>{{ customer.recent_hour }}</td>
+      <td><a href="{% url 'update' customer.pk %}" class="btn btn-primary">Update</a></td>
+      <td><a href="{% url 'delete' customer.pk %}" class="btn btn-danger">Delete</a></td>
+    </tr>
+  </tbody>
+  {% endfor %}
+  </table>
+  <a href="{% url 'create' %}" type="submit" class="btn btn-primary mb-3">Add new customer</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+  /** font-family: 'Open Sans', sans-serif; ***/
+ /*** font-family: 'Open Sans', sans-serif; **/
+ font-family: 'Roboto', sans-serif;
+ background-color: #e6f7ff;
+}
+body .home-nav{
+  background-color: #004466;
+}
+
+body nav{
+  background-color: #004466;
+}
+body nav img{
+  width: 90px;
+  height: 50px;
+}
+body nav ul li:hover{
+  background-color: orange;
+}
+
+.second-container{
+  margin: 20px 0px 20px 0px;
+  box-shadow: 5px 5px 30px #9494b8;
+}
+
+.second-container .heading{
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #0088cc;
+  text-align: center;
+  color: white;
+}
+
+
+
+.customer-detail-container{
+  box-shadow: 10px 10px 50px #9494b8;
+  padding-top: 1px;
+}
+
+.customer-detail-container .table .description{
+  color: rgba(0,0,0,0.5)
+}
+
+div .customer-detail{
+  background-color: #0088cc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.outdoor-gallary-button{
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+
+.outdoor-gallary-button .btn1{
+  background-color: black;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+.outdoor-gallary-button .btn2{
+  margin-top: 29px;
+  margin-left: 15px;
+  background-color: #ff6666;
+  margin-bottom: 25px;
+  width: 150px;
+}
+
+.button{
+  padding-bottom: 20px;
+}
+
+
+
+
+/***** Base navigation *****/
+
+
+
+
+.profile-base1{
+  background-color: #e6f7ff;
+  box-shadow: 10px 10px 50px #efefef;
+}
+
+.container .profile-img{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.profile-div{
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.profile-div h2{
+  margin-bottom: 20px;
+}
+.profile-div h6{
+  line-height: 25px;
+  text-indent: 40px;
+}
+.profile-div a{
+  color: blue;
+}
+.components{
+  width: 100%;
+}
+.profile{
+  margin-top: 40px;
+}
+.profile .h6{
+  line-height: 27px;
+  text-indent: 40px;
+}
+.profile-image{
+  text-align: center;
+}
+.profile-image img{
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.total-due h3{
+  text-align: center;
+  color: green;
+}
+
+.total-due table{
+  background-color: #b3ffdd;
+}
+
+.user_list{
+  text-align: center;
+  padding-top: 100px;
+}
+
+.user_list ul{
+  background-color: blue;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.user_list ul li{
+  list-style-type: none;
+  background-color: blue;
+  padding: 10px 20px 10px 20px;
+  margin-left: -40px;
+}
+.user_list ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+.user_list ul li:hover{
+  background-color: green;
+}

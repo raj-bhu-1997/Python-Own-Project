@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="conatiner mt-5">
+  <div class="container mt-3 total-due">
+    <h3>Total due status</h3>
+      <table class="table mt-4">
+        <tr>
+          <th>Total no of engine</th>
+          <td>{{ total }}</td>
+        </tr>
+        <tr>
+          <th>Total no of B check due</th>
+          <td>{{ b }}</td>
+        </tr>
+        <tr>
+          <th>Total no of Coolant due</th>
+          <td>{{ coolant }}</td>
+        </tr>
+        <tr>
+          <th>Total no of Battery due</th>
+          <td>{{ battery }}</td>
+        </tr>
+        <tr>
+          <th>Total no of Airfilter due </th>
+          <td>{{ airfilter }}</td>
+        </tr>
+        <tr>
+          <th>Total no of AMC due </th>
+          <td>{{ amc }}</td>
+        </tr>
+      </table>
+  </div>
+</div>
+{% endblock %}
